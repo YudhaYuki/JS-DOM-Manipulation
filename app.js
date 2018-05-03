@@ -12,24 +12,7 @@ GAME RULES:
 
 var scores, roundScore, activePlayer;
 
-scores = [0, 0];
-roundScore = 0;
-activePlayer = 0;
-
-// TESTING ONLY
-// document.querySelector('#current-' + activePlayer).textContent = dice;
-// document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '</em>';
-
-// var x = document.querySelector('#score-1').textContent;
-
-
-
-document.querySelector('.dice').style.display = 'none';
-
-document.getElementById('score-0').textContent = '0';
-document.getElementById('score-1').textContent = '0';
-document.getElementById('current-0').textContent = '0';
-document.getElementById('current-1').textContent = '0';
+init();
 
 // Rolling the button
 document.querySelector('.btn-roll').addEventListener('click', function() {
@@ -103,4 +86,27 @@ function nextPlayer() {
     
     // Hidden the dice before another player plays
     document.querySelector('.dice').style.display = 'none';
+}
+
+// Reset everything WHEN we click NEW GAME button
+document.querySelector('.btn-new').addEventListener('click', init);
+
+function init() {
+    scores = [0, 0];
+    roundScore = 0;
+    activePlayer = 0;
+
+    // TESTING ONLY
+    // document.querySelector('#current-' + activePlayer).textContent = dice;
+    // document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '</em>';
+
+    // var x = document.querySelector('#score-1').textContent;
+
+    document.querySelector('.dice').style.display = 'none';
+
+    document.getElementById('score-0').textContent = '0';
+    document.getElementById('score-1').textContent = '0';
+    document.getElementById('current-0').textContent = '0';
+    document.getElementById('current-1').textContent = '0';
+
 }
