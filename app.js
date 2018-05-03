@@ -113,5 +113,15 @@ function init() {
     document.getElementById('name-0').textContent = 'Player 1';
     document.getElementById('name-1').textContent = 'Player 2!';
     
+    // Remove the WINNER class styling
+    document.querySelector('.player-0-panel').classList.remove('winner');
+    document.querySelector('.player-1-panel').classList.remove('winner');    
 
+    // Remove the ACTIVE PLAYER class styling
+    document.querySelector('.player-0-panel').classList.remove('active');
+    document.querySelector('.player-1-panel').classList.remove('active'); 
+
+    // Add the ACTIVE PLAYER class styling to PLAYER 1 again
+    document.querySelector('.player-0-panel').classList.add('active');
+    
 }
