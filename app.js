@@ -65,13 +65,20 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
 
     // Check if player won the game
     if (scores[activePlayer] >= 20) {
-        document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
-    } else {
 
+        // Show WINNER pops up when reach cetrain amount of points
+        document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
+        // Hiding the DICE
+        document.querySelector('.dice').style.display = 'none';
+        // Adding winner class and removing active player
+        document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
+        document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');        
+
+    } else {
+        // Next player
+        nextPlayer();
     }
 
-    // Next player
-    nextPlayer();
 
 });
 
